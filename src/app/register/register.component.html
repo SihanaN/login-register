@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div *ngIf="!isRegistered" class="card">
+        <div class="text-center">
+          <h1>Register</h1>
+          <h5>To register please enter an email and password</h5>
+          <h6>email: eve.holt@reqres.in password: pistol</h6>
+          <form [formGroup]="register">
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label"
+                >Email address</label
+              >
+              <input
+                type="email"
+                placeholder="Enter your email "
+                class="form-control"
+                formControlName="email"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label"
+                >Password</label
+              >
+              <input
+                type="password"
+                placeholder="Enter you password"
+                class="form-control"
+                formControlName="password"
+              />
+            </div>
+            <div class="btns">
+              <button
+                class="btn btn-outline-primary form-control round-0"
+                (click)="registerSubmit(register.value)"
+                [disabled]="register.invalid"
+              >
+                Register
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div *ngIf="isRegistered">
+        <p>Register was succssful! Please click the button to login</p>
+        <button></button>
+      </div>
+    </div>
+  </div>
+</div>

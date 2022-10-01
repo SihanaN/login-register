@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="text-center">
+          <h1>Login</h1>
+          <h6>Please enter email and password to continue!!</h6>
+          <h6>email: eve.holt@reqres.in  password: cityliska</h6>
+          <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+            <div class="mb-3">
+              <label for="exampleInputEmail1">Email address</label>
+            <input
+              ngModel
+              name="email"
+              type="email"              
+              class="form-control"
+              id="email"
+              placeholder="Enter your email"
+            >
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Password</label>
+              <input
+              ngModel
+              name="password"
+              type="password"
+              class="form-control"
+              placeholder="Enter your password"
+              id="userPassword"
+            >
+          </div>
+            <input
+              type="submit"
+              value="Login"
+              class="btn btn-outline-primary form-control round-0"
+            >
+          
+          </form>
+          <a routerLink="/register">New user? Click to register!</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

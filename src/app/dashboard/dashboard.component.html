@@ -1,0 +1,26 @@
+<div class="container">
+  <table class="table table-bordered">
+    <tr>
+      <th>ID</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+    </tr>
+    <tr
+      *ngFor="
+        let user of usersList
+          | paginate: { itemsPerPage: 6, currentPage: p, totalItems: total }
+      "
+    >
+      <td>{{ user.id }}</td>
+      <td>{{ user.first_name }}</td>
+      <td>{{ user.last_name }}</td>
+      <td>{{ user.email }}</td>
+      <td><img [src]="user.avatar" /></td>
+    </tr>
+  </table>
+
+  <pagination-controls
+    (pageChange)="pageChangeEvent($event)"
+  ></pagination-controls>
+</div>
